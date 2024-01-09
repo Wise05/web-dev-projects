@@ -1,0 +1,104 @@
+html, body {
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+h1 {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    border-bottom: 4px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 1026px) {
+    h1 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 30px;
+    }
+}
+
+#introBox {
+    margin: 0;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: center;
+    padding: 40px 0px 40px 0px;
+}
+
+p {
+    text-indent: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+#introText {
+    max-width: 60%;
+    padding-top: 20px;
+}
+
+#dormRoom {
+    max-width: 400px;
+}
+
+#topicOne {
+    background-color: bisque;
+    padding: 140px 0px 40px 0px;
+}
+
+#slideshow {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#slide {
+    max-width: 500px;
+}
+
+#slideCaption {
+    background-color: white;
+    max-width: 300px;
+    padding: 20px;
+}
+
+@media (max-width: 857px) {
+    #slideCaption {
+        max-width: 460px;
+    }
+}
+
+#slideTitle {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
