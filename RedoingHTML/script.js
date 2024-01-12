@@ -28,15 +28,9 @@ const captions = [
     "This is a picture of my coworker. I worked at the dining hall this semester and this is when I had to work in the dish room. This is a photo of my coworker's creation. A snowman made out of cheesy potatoes with other random food to make up its facial features. In the dishroom we have to throw away a lot of food waste, so my coworker decided to have some last minute fun with the cheesy potatoes before throughing it away. He is holding the bucket on top of it to protect it from people who wanted to through his creation away. This was a regular occurance when I worked this shift.",
     "This next photo is me at the career fair. Similar to the club festival picture, I was required to take this photo for my software orientation class. I talked to three employers, each of which were not really interested in a freshman who was just starting out his college career and didn't even have a college GPA yet."
 ];
-const bufferTime = 5000;
-let i = 0;
 
+let i = 0;
 function switchSlide() {
-    if (i !== 3) {
-        i++;
-    } else {
-        i = 0;
-    }
     slide.src = images[i];
     slideshowCap.innerHTML = `
     <h2 id="slideTitle">${headers[i]}</h2>
@@ -44,8 +38,30 @@ function switchSlide() {
 }
 
 const slideshow = document.getElementById('slideshow');
+
 function transition() {
     slideshow.classList.toggle("hidden");
+    setTimeout(switchSlide, 500);
+    setTimeout(() => {slideshow.classList.toggle("hidden")}, 600);
 }
 
-setInterval(switchSlide, bufferTime);
+const rightButton = document.getElementById('rightButton');
+const leftButton = document.getElementById('leftButton');
+
+rightButton.addEventListener("click", () => {
+    if (i !== 3) {
+        i++;
+    } else {
+        i = 0;
+    }
+    transition();
+});
+
+leftButton.addEventListener("click", () => {
+    if (i !== 0) {
+        i--;
+    } else {
+        i = 3;
+    }
+    transition();
+});
